@@ -1,0 +1,51 @@
+.carousel_Image {
+}
+
+.genres_bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  height: 50px;
+  width: 100%;
+  background-color: black;
+}
+.genre-text {
+  font-size: 20px;
+  font-weight: 450;
+  color: rgba(240, 248, 255, 0.81);
+  padding-top: 11px;
+  margin-right: 16px;
+}
+.button_genres {
+  color: aliceblue;
+  margin-top: 10px;
+  font-size: 14px;
+
+  height: 32px;
+  border-width: 1.5px;
+  border-color: red;
+  background-color: rgba(122, 116, 116, 0.007);
+  margin-left: 10px;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.button_genres:hover {
+  background-color: rgba(255, 0, 0, 0.928);
+}
+.button_genres_more {
+  color: rgba(255, 0, 0, 0.928);
+  margin-top: 10px;
+  height: 32px;
+  background-color: rgba(244, 29, 29, 0.007);
+  margin-left: 10px;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+}
+.button_genres_more:hover {
+  color: aliceblue;
+}
