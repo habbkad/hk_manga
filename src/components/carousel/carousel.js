@@ -8,14 +8,18 @@ const Carousel = () => {
 
   return (
     <div>
+      {" "}
       <Navbar />
-      <div id="controls-carousel" class="relative" data-carousel="static">
+      <div id="controls-carousel" class="relative " data-carousel="static">
+        {" "}
         {/* <!-- Carousel wrapper --> */}
         <div class="relative h-40 overflow-hidden  md:h-96">
           {/* <!-- Item 1 --> */}
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
+          <div
+            class="carousel_pic hidden duration-700 ease-in-out"
+            data-carousel-item
+          >
             <div
-              className="carousel_Image"
               style={{
                 backgroundImage: `url(${img}) `,
                 backgroundRepeat: "  no-repeat",
@@ -23,44 +27,142 @@ const Carousel = () => {
                 width: "100%",
                 height: "400px",
               }}
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
-            ></div>
+            >
+              <div>
+                <div className="carousel_genres_con">
+                  <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                    title
+                  </h1>
+                  <div>
+                    <button type="button" class=" carousel_genres ">
+                      Action
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           {/* <!-- Item 2 --> */}
           <div
-            class="hidden duration-700 ease-in-out"
-            data-carousel-item="active"
+            class="carousel_pic hidden duration-700 ease-in-out"
+            data-carousel-item
           >
-            <img
-              src="https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+            <div
+              style={{
+                backgroundImage: `url(${img}) `,
+                backgroundRepeat: "  no-repeat",
+                backgroundSize: "cover",
+                width: "100%",
+                height: "400px",
+              }}
+              class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
-            />
+            >
+              <div>
+                <div className="carousel_genres_con">
+                  <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                    title
+                  </h1>
+                  <div>
+                    <button type="button" class=" carousel_genres ">
+                      Action
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           {/* <!-- Item 3 --> */}
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src="https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          <div
+            class="carousel_pic hidden duration-700 ease-in-out"
+            data-carousel-item
+          >
+            <div
+              style={{
+                backgroundImage: `url(${img}) `,
+                backgroundRepeat: "  no-repeat",
+                backgroundSize: "cover",
+                width: "100%",
+                height: "400px",
+              }}
+              class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
-            />
+            >
+              <div>
+                <div className="carousel_genres_con">
+                  <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                    title
+                  </h1>
+                  <div>
+                    <button type="button" class=" carousel_genres ">
+                      Action
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           {/* <!-- Item 4 --> */}
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src="https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          <div
+            class="carousel_pic hidden duration-700 ease-in-out"
+            data-carousel-item
+          >
+            <div
+              style={{
+                backgroundImage: `url(${img}) `,
+                backgroundRepeat: "  no-repeat",
+                backgroundSize: "cover",
+                width: "100%",
+                height: "400px",
+              }}
+              class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
-            />
+            >
+              <div>
+                <div className="carousel_genres_con">
+                  <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                    title
+                  </h1>
+                  <div>
+                    <button type="button" class=" carousel_genres ">
+                      Action
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
           {/* <!-- Item 5 --> */}
-          <div class="hidden duration-700 ease-in-out" data-carousel-item>
-            <img
-              src="https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60"
-              class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          <div
+            class="carousel_pic hidden duration-700 ease-in-out"
+            data-carousel-item
+          >
+            <div
+              style={{
+                backgroundImage: `url(${img}) `,
+                backgroundRepeat: "  no-repeat",
+                backgroundSize: "cover",
+                width: "100%",
+                height: "400px",
+              }}
+              class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
-            />
+            >
+              <div>
+                <div className="carousel_genres_con">
+                  <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+                    title
+                  </h1>
+                  <div>
+                    <button type="button" class=" carousel_genres ">
+                      Action
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         {/* <!-- Slider controls --> */}
@@ -135,6 +237,16 @@ const Carousel = () => {
         <button type="button" class=" button_genres_more ">
           All Genres >
         </button>
+      </div>
+      <div className="carousel_genres_con_mobile">
+        <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+          title
+        </h1>
+        <div>
+          <button type="button" class=" carousel_genres ">
+            Action
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@
   flex-direction: row;
   background-color: rgba(244, 201, 201, 0);
   align-items: center;
-  height: 70px;
+
   width: 100%;
   justify-content: space-between;
 }
@@ -36,4 +36,38 @@ ul {
 .socials {
   width: 40px;
   height: 40px;
+}
+
+@media screen and (max-width: 375px) {
+  .navbar_container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(244, 201, 201, 0);
+    align-items: center;
+
+    width: 375px;
+    justify-content: space-between;
+  }
+
+  .nav_search_socials {
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .links_con {
+    width: 90% !important;
+    background-color: rgba(240, 248, 255, 0.017);
+    padding: 5px !important;
+  }
+  .search {
+    visibility: hidden;
+
+    width: 0px;
+    height: 0px;
+  }
+  .socials {
+    width: 0px;
+    height: 0px;
+  }
 }
