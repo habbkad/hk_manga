@@ -3,11 +3,15 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import discord from "../../assets/icons8-discord-color/icons8-discord-48.svg";
 import pinterest from "../../assets/icons8-pinterest-color/icons8-pinterest-48.svg";
+import { useSelector, useDispatch } from "react-redux";
+import { currentWidth } from "../../Redux/reducers/responsive_width";
 const Navbar = () => {
+  const dispatch = useDispatch();
   const [width, setWidth] = useState();
   useEffect(() => {
     function handleResize() {
-      setWidth(window.innerWidth);
+      setWidth(window.outerWidth);
+      dispatch(currentWidth(width));
     }
 
     window.addEventListener("resize", handleResize);
@@ -21,7 +25,7 @@ const Navbar = () => {
   console.log(width);
 
   return (
-    <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+    <nav class=" border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
       <div class="navbar_container container flex flex-wrap items-center justify-between mx-auto">
         <button
           data-collapse-toggle="navbar-default"
@@ -50,7 +54,7 @@ const Navbar = () => {
           id="navbar-default"
         >
           {" "}
-          <ul class="links_con flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-7 md:mt-0 md:mr-10 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+          <ul class="links_con flex flex-col p-4 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-7 md:mt-0 md:mr-10 md:text-sm md:font-medium md:border-0   ">
             <li class="ml-6 ">
               <Link
                 to={"#"}
