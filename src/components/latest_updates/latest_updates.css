@@ -1,0 +1,46 @@
+.latest_con {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 15%;
+}
+.latest_line {
+  height: 0.5px;
+  width: 100%;
+  border-width: 0.5px;
+  border-color: red;
+  margin-bottom: 15px;
+  margin-top: 10px;
+}
+#viewAllBtn {
+  align-self: center;
+  height: 30px;
+  width: 70%;
+}
+.latest_chaps {
+}
+@media screen and(max-width: 375px) {
+  .latest_con {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 10%;
+    margin-right: 0%;
+    margin-top: 0%;
+  }
+  .latest_line {
+    height: 0.5px;
+    width: 100%;
+    border-width: 0.5px;
+    border-color: red;
+    margin-bottom: 15px;
+    margin-top: 10px;
+  }
+  #viewAllBtn {
+    align-self: center;
+    height: 30px;
+    width: 90%;
+  }
+}

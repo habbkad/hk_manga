@@ -16,17 +16,17 @@ const Carousel = () => {
         <div class="relative h-40 overflow-hidden  md:h-96">
           {/* <!-- Item 1 --> */}
           <div
-            class="carousel_pic hidden duration-700 ease-in-out"
+            class="carousel_pic hidden duration-100 ease-in-out"
             data-carousel-item
+            style={{
+              backgroundImage: `url(${img}) `,
+              backgroundRepeat: "  no-repeat",
+              backgroundSize: "cover",
+              width: "96%",
+              height: "400px",
+            }}
           >
             <div
-              style={{
-                backgroundImage: `url(${img}) `,
-                backgroundRepeat: "  no-repeat",
-                backgroundSize: "cover",
-                width: "100%",
-                height: "400px",
-              }}
               class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
             >
@@ -47,16 +47,15 @@ const Carousel = () => {
           {/* <!-- Item 2 --> */}
           <div
             class="carousel_pic hidden duration-700 ease-in-out"
-            data-carousel-item
+            data-carousel-itemstyle={{
+              backgroundImage: `url(${img}) `,
+              backgroundRepeat: "  no-repeat",
+              backgroundSize: "cover",
+              width: "100%",
+              height: "400px",
+            }}
           >
             <div
-              style={{
-                backgroundImage: `url(${img}) `,
-                backgroundRepeat: "  no-repeat",
-                backgroundSize: "cover",
-                width: "100%",
-                height: "400px",
-              }}
               class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
             >
@@ -78,15 +77,15 @@ const Carousel = () => {
           <div
             class="carousel_pic hidden duration-700 ease-in-out"
             data-carousel-item
+            style={{
+              backgroundImage: `url(${img}) `,
+              backgroundRepeat: "  no-repeat",
+              backgroundSize: "cover",
+              width: "100%",
+              height: "400px",
+            }}
           >
             <div
-              style={{
-                backgroundImage: `url(${img}) `,
-                backgroundRepeat: "  no-repeat",
-                backgroundSize: "cover",
-                width: "100%",
-                height: "400px",
-              }}
               class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
             >
@@ -108,15 +107,15 @@ const Carousel = () => {
           <div
             class="carousel_pic hidden duration-700 ease-in-out"
             data-carousel-item
+            style={{
+              backgroundImage: `url(${img}) `,
+              backgroundRepeat: "  no-repeat",
+              backgroundSize: "cover",
+              width: "100%",
+              height: "400px",
+            }}
           >
             <div
-              style={{
-                backgroundImage: `url(${img}) `,
-                backgroundRepeat: "  no-repeat",
-                backgroundSize: "cover",
-                width: "100%",
-                height: "400px",
-              }}
               class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
             >
@@ -138,15 +137,15 @@ const Carousel = () => {
           <div
             class="carousel_pic hidden duration-700 ease-in-out"
             data-carousel-item
+            style={{
+              backgroundImage: `url(${img}) `,
+              backgroundRepeat: "  no-repeat",
+              backgroundSize: "cover",
+              width: "100%",
+              height: "400px",
+            }}
           >
             <div
-              style={{
-                backgroundImage: `url(${img}) `,
-                backgroundRepeat: "  no-repeat",
-                backgroundSize: "cover",
-                width: "100%",
-                height: "400px",
-              }}
               class="carousel_Image absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
               alt="..."
             >

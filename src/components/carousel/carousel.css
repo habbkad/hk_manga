@@ -1,6 +1,18 @@
+.carousel_pic {
+  display: flex;
+  background-image: linear-gradient(
+    transparent,
+    to bottom right,
+    red,
+    rgb(239, 239, 229)
+  );
+}
 .carousel_Image {
   display: flex;
   align-items: center;
+  height: 100%;
+  /* background: (linear, left top, left bottom, from(transparent)); */
+  background: linear-gradient(to left, transparent, rgb(10, 10, 10));
 }
 
 .carousel_genres {
@@ -12,10 +24,12 @@
   border-color: rgb(246, 223, 223);
   background-color: rgba(247, 242, 242, 0.419);
   margin-left: 10px;
+
   border-radius: 20px;
   padding-left: 7px;
   padding-right: 7px;
 }
+
 .carousel_genres:hover {
   background-color: rgba(255, 0, 0, 0.928);
 }

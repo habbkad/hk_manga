@@ -1,0 +1,21 @@
+.cover_rating_con {
+  width: 170px;
+}
+
+.image_cr_con {
+  display: flex;
+  flex-direction: column;
+}
+.image_cr:hover {
+  border-width: 1.5px;
+  border-color: rgba(255, 0, 0, 0.714);
+}
+.image_cr {
+  height: 250px;
+
+  border-radius: 10px;
+}
+.rating_container {
+  display: flex;
+  justify-content: space-between;
+}
