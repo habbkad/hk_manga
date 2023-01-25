@@ -1,0 +1,36 @@
+.info_chaps_con {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.detail_info_con {
+  width: 30%;
+}
+.detail_chap_con {
+  width: 70%;
+}
+
+.detail_info_text {
+  display: flex;
+}
+
+@media only screen and (max-width: 640px) {
+  .info_chaps_con {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 145%;
+    width: 100%;
+  }
+  .detail_info_con {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.86);
+  }
+  .detail_chap_con {
+    width: 100%;
+  }
+
+  .detail_info_text {
+    display: flex;
+  }
+}

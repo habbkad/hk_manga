@@ -29,7 +29,7 @@ const PopularToday = () => {
       <h2>Popular Today</h2>
       <div className="popular_line"></div>
 
-      {width <= 375 ? (
+      {width <= 640 ? (
         <div>
           <div className="popular_cover_con">
             <PopularCarousel />

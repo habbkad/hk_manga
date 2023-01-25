@@ -24,11 +24,11 @@
   flex-direction: column;
 }
 #chapBtn {
-  width: 200px !important;
+  width: 200px;
   height: 30px;
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 640px) {
   .cover_ch {
     display: flex;
     flex-direction: row;

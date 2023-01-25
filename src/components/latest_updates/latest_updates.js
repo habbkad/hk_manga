@@ -27,7 +27,7 @@ const LatestUpdates = () => {
 
       <div
         class={
-          width == 375 ? "latest_chaps" : "grid grid-rows-5 grid-flow-col gap-4"
+          width <= 640 ? "latest_chaps" : "grid grid-rows-5 grid-flow-col gap-4"
         }
       >
         {arr.map(() => {

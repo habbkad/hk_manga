@@ -1,7 +1,7 @@
 .navbar_container {
   display: flex;
   flex-direction: row;
-  background-color: rgba(244, 201, 201, 0);
+  background: linear-gradient(rgba(15, 2, 2, 0.669));
   align-items: center;
 
   width: 100%;
@@ -38,7 +38,7 @@ ul {
   height: 40px;
 }
 
-@media screen and (max-width: 375px) {
+@media only screen and (max-width: 640px) {
   .navbar_container {
     display: flex;
     flex-direction: row;

@@ -9,7 +9,6 @@ const Carousel = () => {
   return (
     <div>
       {" "}
-      <Navbar />
       <div id="controls-carousel" class="relative " data-carousel="static">
         {" "}
         {/* <!-- Carousel wrapper --> */}
@@ -22,7 +21,7 @@ const Carousel = () => {
               backgroundImage: `url(${img}) `,
               backgroundRepeat: "  no-repeat",
               backgroundSize: "cover",
-              width: "96%",
+              width: "100%",
               height: "400px",
             }}
           >

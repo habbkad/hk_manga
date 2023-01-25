@@ -88,7 +88,7 @@
 
 /* mobile Screen */
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 640px) {
   .carousel_genres_con {
     visibility: hidden;
   }
