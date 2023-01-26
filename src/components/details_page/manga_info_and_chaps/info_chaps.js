@@ -4,7 +4,7 @@ import "./info_chaps.css";
 
 const InfoChaps = () => {
   return (
-    <div className="mb-4">
+    <div>
       <div className="info_chaps_con">
         <div className="detail_info_con">
           <div>

@@ -65,11 +65,12 @@
 @media only screen and (max-width: 640px) {
   .bg-image {
     visibility: hidden;
+    height: 0px;
   }
 
   .synopsis_con {
     width: 100%;
-    position: none;
+    position: relative;
     top: 0%;
 
     /* background-image: url("https://images.unsplash.com/photo-1674300810687-6c3af30f6514?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60");
