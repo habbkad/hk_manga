@@ -18,8 +18,7 @@
   .info_chaps_con {
     display: flex;
     flex-direction: column;
-    position: absolute;
-    top: 145%;
+    position: relative;
     width: 100%;
   }
   .detail_info_con {
