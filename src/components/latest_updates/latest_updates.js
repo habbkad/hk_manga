@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import CoverChaps from "../chap_cover_chaps/cover_chaps";
 import "./latest_updates.css";
+import { useSelector } from "react-redux";
 
 const LatestUpdates = () => {
   const [width, setWidth] = useState();
+  // const [manga, setManga] = useState([]);
+  const { manga } = useSelector((state) => state.latest);
   const arr = [1, 4, 3, 2, 3, 2, 4, 5, 5, 5, 4, 3];
   useEffect(() => {
     function handleResize() {
@@ -18,6 +21,15 @@ const LatestUpdates = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [width]);
+
+  // useEffect(() => {
+  //   function getManga() {
+  //     let { manga } = data;
+  //     setManga(manga);
+  //   }
+  //   getManga();
+  // }, [manga]);
+  console.log(manga);
   return (
     <div className="latest_con">
       <div>
@@ -27,13 +39,15 @@ const LatestUpdates = () => {
 
       <div
         class={
-          width <= 640 ? "latest_chaps" : "grid grid-rows-5 grid-flow-col gap-4"
+          width <= 640
+            ? "latest_chaps"
+            : "grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap1 sm:mt-"
         }
       >
-        {arr.map(() => {
+        {manga.map((item) => {
           return (
-            <div>
-              <CoverChaps />
+            <div key={item.id}>
+              <CoverChaps manga={item} />
             </div>
           );
         })}
