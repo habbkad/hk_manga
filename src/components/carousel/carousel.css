@@ -7,6 +7,11 @@
     rgb(239, 239, 229)
   );
 }
+.carousel_genres_con {
+  position: absolute;
+  margin-top: 100px;
+  margin-left: 50px;
+}
 .carousel_Image {
   display: flex;
   align-items: center;

@@ -1,0 +1,10 @@
+.chap_images_container {
+  display: flex;
+  flex-direction: column;
+}
+.chap_images {
+  display: flex;
+
+  flex-direction: column;
+  align-self: center;
+}

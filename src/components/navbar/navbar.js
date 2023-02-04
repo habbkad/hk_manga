@@ -25,7 +25,7 @@ const Navbar = () => {
   console.log(width);
 
   return (
-    <nav class=" border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
+    <nav class="nav_con border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
       <div class="navbar_container container flex flex-wrap items-center justify-between mx-auto">
         <button
           data-collapse-toggle="navbar-default"

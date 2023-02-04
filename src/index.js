@@ -7,6 +7,7 @@ import "tw-elements";
 import "flowbite";
 import { Provider } from "react-redux";
 import store from "./Redux/store";
+import "tw-elements";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>

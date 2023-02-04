@@ -2,7 +2,8 @@ import React from "react";
 import ChapsCon from "../chapters_container/chaps_con";
 import "./info_chaps.css";
 
-const InfoChaps = () => {
+const InfoChaps = ({ manga }) => {
+  console.log(manga);
   return (
     <div>
       <div className="info_chaps_con">
@@ -66,7 +67,7 @@ const InfoChaps = () => {
           </div>
         </div>
         <div className="detail_chap_con">
-          <ChapsCon />
+          <ChapsCon chapters={manga.chapters} />
         </div>
       </div>
     </div>
