@@ -7,6 +7,7 @@ const LatestUpdates = () => {
   const [width, setWidth] = useState();
   // const [manga, setManga] = useState([]);
   const { manga } = useSelector((state) => state.latest);
+
   const arr = [1, 4, 3, 2, 3, 2, 4, 5, 5, 5, 4, 3];
   useEffect(() => {
     function handleResize() {
@@ -44,13 +45,17 @@ const LatestUpdates = () => {
             : "grid grid-cols-2 lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 gap1 sm:mt-"
         }
       >
-        {manga.map((item) => {
-          return (
-            <div key={item.id}>
-              <CoverChaps manga={item} />
-            </div>
-          );
-        })}
+        {manga ? (
+          manga.map((item) => {
+            return (
+              <div key={item.id}>
+                <CoverChaps manga={item} />
+              </div>
+            );
+          })
+        ) : (
+          <div>Loading...</div>
+        )}
       </div>
       <button
         type="button"
