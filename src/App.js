@@ -3,7 +3,7 @@ import Router from "./router/router";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-darkCol">
       <Router />
     </div>
   );

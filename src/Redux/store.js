@@ -2,11 +2,13 @@ import { configureStore } from "@reduxjs/toolkit";
 import responsive_width from "./reducers/responsive_width";
 import latest_manga from "./reducers/latest_manga";
 import chapters_reducer from "./reducers/chapters_reducer";
+import manga_genres from "./reducers/manga_genres";
 export default configureStore({
   reducer: {
     pageWidth: responsive_width,
     latest: latest_manga,
     chapImages: chapters_reducer,
+    genres: manga_genres,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

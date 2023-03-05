@@ -4,21 +4,7 @@ import "./carousel.css";
 import { useSelector } from "react-redux";
 
 const Carousel = () => {
-  const { manga } = useSelector((state) => state.latest);
-
-  let carouselImages;
-  let carouselDetails;
-  if (manga) {
-    carouselImages = manga.slice(0, 5);
-    carouselDetails = carouselImages.map((item) => {
-      const { cover_art } = item;
-      const { title } = item;
-      return { cover_art, title };
-    });
-  }
-  console.log(carouselDetails);
-  let img =
-    "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60";
+  const { carousel } = useSelector((state) => state.latest);
 
   return (
     <div>
@@ -26,109 +12,209 @@ const Carousel = () => {
       <div>
         <div id="controls-carousel" class="relative" data-carousel="static">
           {/* <!-- Carousel wrapper --> */}
-          <div class=" relative h-56 overflow-hidden rounded-lg md:h-96">
+          <div class=" relative h-56 overflow-hidden rounded-lg md:h-96 carousel_hight">
             {/* <!-- Item 1 --> */}
-            <div class=" hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              class=" hidden duration-700 ease-in-out bg-gradient-to-r from-gradientCol"
+              data-carousel-item
+            >
               <img
-                src={img}
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                src={carousel[0].cover_art[0]}
+                class="absolute carousel_Image "
+                style={{
+                  width: "50%",
+                  height: "90%",
+                  marginLeft: "40%",
+                  marginRight: "10%",
+                  marginTop: "1.5%",
+                  borderRadius: "20px",
+                }}
                 alt="..."
               />{" "}
-              <div className="carousel_genres_con">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                  title
+              <div className="carousel_genres_con w-96">
+                <h1 class="mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                  {carousel[0].title}
                 </h1>
                 <div>
-                  <button type="button" class=" carousel_genres ">
-                    Action
-                  </button>
-                </div>
-              </div>
-              <div>
-                <div className="carousel_genres_con">
-                  <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                    title
-                  </h1>
-                  <div>
+                  {carousel ? (
+                    carousel[0].genre.map((item, index) => {
+                      if (index <= 3) {
+                        return (
+                          <button type="button" class=" carousel_genres ">
+                            {item}
+                          </button>
+                        );
+                      }
+                    })
+                  ) : (
                     <button type="button" class=" carousel_genres ">
-                      Action
+                      Genres
                     </button>
-                  </div>
+                  )}
                 </div>
               </div>
             </div>
             {/* <!-- Item 2 --> */}
             <div
-              class="hidden duration-700 ease-in-out"
+              class=" hidden duration-700 ease-in-out bg-gradient-to-r from-gradientCol "
               data-carousel-item="active"
             >
               <img
-                src={img}
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                src={carousel[1].cover_art[0]}
+                class="absolute carousel_Image "
+                style={{
+                  width: "50%",
+                  height: "90%",
+                  marginLeft: "40%",
+                  marginRight: "10%",
+                  marginTop: "1.5%",
+                  borderRadius: "20px",
+                }}
                 alt="..."
-              />
-              <div className="carousel_genres_con">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                  title
+              />{" "}
+              <div className="carousel_genres_con w-96">
+                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                  {carousel[1].title}
                 </h1>
                 <div>
-                  <button type="button" class=" carousel_genres ">
-                    Action
-                  </button>
+                  {carousel ? (
+                    carousel[1].genre.map((item, index) => {
+                      if (index <= 3) {
+                        return (
+                          <button type="button" class=" carousel_genres ">
+                            {item}
+                          </button>
+                        );
+                      }
+                    })
+                  ) : (
+                    <button type="button" class=" carousel_genres ">
+                      Genres
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
             {/* <!-- Item 3 --> */}
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              class=" hidden duration-700 ease-in-out bg-gradient-to-r from-gradientCol "
+              data-carousel-item
+            >
               <img
-                src={img}
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                src={carousel[2].cover_art[0]}
+                class="absolute carousel_Image "
+                style={{
+                  width: "50%",
+                  height: "90%",
+                  marginLeft: "40%",
+                  marginRight: "10%",
+                  marginTop: "1.5%",
+                  borderRadius: "20px",
+                }}
                 alt="..."
               />{" "}
-              <div className="carousel_genres_con">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                  title
+              <div className="carousel_genres_con w-96">
+                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                  {carousel[2].title}
                 </h1>
                 <div>
-                  <button type="button" class=" carousel_genres ">
-                    Action
-                  </button>
+                  {carousel ? (
+                    carousel[2].genre.map((item, index) => {
+                      if (index <= 3) {
+                        return (
+                          <button type="button" class=" carousel_genres ">
+                            {item}
+                          </button>
+                        );
+                      }
+                    })
+                  ) : (
+                    <button type="button" class=" carousel_genres ">
+                      Genres
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
             {/* <!-- Item 4 --> */}
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              class=" hidden duration-700 ease-in-out bg-gradient-to-r from-gradientCol "
+              data-carousel-item
+            >
               <img
-                src={img}
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                src={carousel[3].cover_art[0]}
+                class="absolute carousel_Image "
+                style={{
+                  width: "50%",
+                  height: "90%",
+                  marginLeft: "40%",
+                  marginRight: "10%",
+                  marginTop: "1.5%",
+                  borderRadius: "20px",
+                }}
                 alt="..."
               />{" "}
-              <div className="carousel_genres_con">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                  title
+              <div className="carousel_genres_con w-96">
+                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                  {carousel[3].title}
                 </h1>
                 <div>
-                  <button type="button" class=" carousel_genres ">
-                    Action
-                  </button>
+                  {carousel ? (
+                    carousel[3].genre.map((item, index) => {
+                      if (index <= 3) {
+                        return (
+                          <button type="button" class=" carousel_genres ">
+                            {item}
+                          </button>
+                        );
+                      }
+                    })
+                  ) : (
+                    <button type="button" class=" carousel_genres ">
+                      Genres
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
             {/* <!-- Item 5 --> */}
-            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+            <div
+              class=" hidden duration-700 ease-in-out bg-gradient-to-r from-gradientCol "
+              data-carousel-item
+            >
               <img
-                src={img}
-                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                src={carousel[4].cover_art[0]}
+                class="absolute carousel_Image"
+                style={{
+                  width: "50%",
+                  height: "90%",
+                  marginLeft: "40%",
+                  marginRight: "10%",
+                  marginTop: "1.5%",
+                  borderRadius: "20px",
+                }}
                 alt="..."
               />{" "}
-              <div className="carousel_genres_con">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-                  title
+              <div className="carousel_genres_con w-96">
+                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                  {carousel[4].title}
                 </h1>
                 <div>
-                  <button type="button" class=" carousel_genres ">
-                    Action
-                  </button>
+                  {carousel ? (
+                    carousel[4].genre.map((item, index) => {
+                      if (index <= 3) {
+                        return (
+                          <button type="button" class=" carousel_genres ">
+                            {item}
+                          </button>
+                        );
+                      }
+                    })
+                  ) : (
+                    <button type="button" class=" carousel_genres ">
+                      Genres
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -207,7 +293,7 @@ const Carousel = () => {
           All Genres >
         </button>
       </div>
-      <div className="carousel_genres_con_mobile">
+      {/* <div className="carousel_genres_con_mobile">
         <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
           title
         </h1>
@@ -216,7 +302,7 @@ const Carousel = () => {
             Action
           </button>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

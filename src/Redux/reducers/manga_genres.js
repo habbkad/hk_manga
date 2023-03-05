@@ -1,52 +1,81 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const latest_manga = createSlice({
-  name: "responsiveWidth",
+export const manga_genres = createSlice({
+  name: "genres",
   initialState: {
-    manga: [],
-    carousel: [
+    action: [
       {
-        genre: [],
+        title: "title",
         cover_art: [
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
         ],
       },
+    ],
+    web_comic: [
       {
-        genre: [],
+        title: "title",
         cover_art: [
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
         ],
       },
+    ],
+    romance: [
       {
-        genre: [],
+        title: "title",
         cover_art: [
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
         ],
       },
+    ],
+    comedy: [
       {
-        genre: [],
+        title: "title",
         cover_art: [
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
         ],
       },
+    ],
+    martial_art: [
       {
-        genre: [],
+        title: "title",
         cover_art: [
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
         ],
       },
+    ],
+    isekai: [
       {
-        genre: [],
+        title: "title",
+        cover_art: [
+          "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+        ],
+      },
+    ],
+    adventure: [
+      {
+        title: "title",
+        cover_art: [
+          "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+          "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
+        ],
+      },
+    ],
+    fantasy: [
+      {
+        title: "title",
         cover_art: [
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
           "https://images.unsplash.com/photo-1673040879068-eae7800898a7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzNHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&q=60",
@@ -56,20 +85,75 @@ export const latest_manga = createSlice({
     ],
   },
   reducers: {
-    set_latest_manga: (state, action) => {
-      let newData = [...action.payload, ...state.manga];
+    set_action: (state, action) => {
+      let newData = action.payload;
       let manga = newData.filter(
         (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
       );
-      state.manga = manga;
+      state.action = manga;
     },
-    set_carousel_cover: (state, action) => {
-      state.carousel = action.payload;
+    set_web_comic: (state, action) => {
+      let newData = action.payload;
+      let manga = newData.filter(
+        (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+      );
+      state.web_comic = manga;
+    },
+    set_romance: (state, action) => {
+      let newData = action.payload;
+      let manga = newData.filter(
+        (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+      );
+      state.romance = manga;
+    },
+    set_comedy: (state, action) => {
+      let newData = action.payload;
+      let manga = newData.filter(
+        (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+      );
+      state.comedy = manga;
+    },
+    set_martial_arts: (state, action) => {
+      let newData = action.payload;
+      let manga = newData.filter(
+        (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+      );
+      state.martial_art = manga;
+    },
+    set_isekai: (state, action) => {
+      let newData = action.payload;
+      let manga = newData.filter(
+        (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+      );
+      state.isekai = manga;
+    },
+    set_adventure: (state, action) => {
+      let newData = action.payload;
+      let manga = newData.filter(
+        (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+      );
+      state.adventure = manga;
+    },
+    set_fantasy: (state, action) => {
+      let newData = action.payload;
+      let manga = newData.filter(
+        (v, i, a) => a.findIndex((v2) => v2.id === v.id) === i
+      );
+      state.fantasy = manga;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { set_latest_manga, set_carousel_cover } = latest_manga.actions;
+export const {
+  set_action,
+  set_adventure,
+  set_fantasy,
+  set_comedy,
+  set_isekai,
+  set_martial_arts,
+  set_web_comic,
+  set_romance,
+} = manga_genres.actions;
 
-export default latest_manga.reducer;
+export default manga_genres.reducer;

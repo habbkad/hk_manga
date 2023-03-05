@@ -1,13 +1,12 @@
 import React from "react";
 
-const PopularCarousel = () => {
-  const arr = ["a", "a", 1, 4, 5, 2];
+const PopularCarousel = ({ data }) => {
   return (
     <div>
       <div id="controls-carousel" class="relative" data-carousel="static">
         <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
           {" "}
-          {arr.map(() => {
+          {data.map((item) => {
             return (
               <div class="hidden duration-300 ease-in-out" data-carousel-item>
                 <div>
@@ -23,7 +22,7 @@ const PopularCarousel = () => {
                     title
                   </h3>
                   <img
-                    src="https://images.unsplash.com/photo-1674064057052-a943a5538926?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+                    src={item.cover_art[2]}
                     class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                     alt="..."
                   />

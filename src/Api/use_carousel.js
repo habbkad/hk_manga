@@ -1,28 +1,23 @@
 import { useState, useEffect } from "react";
 import mangaApi from "./api";
-import { set_latest_manga, set_carousel } from "../Redux/reducers/latest_manga";
 import { useDispatch } from "react-redux";
 import { set_carousel_cover } from "../Redux/reducers/latest_manga";
-import { Carousel } from "flowbite";
 
-export const useLatestManga = () => {
+export const useCarousel = () => {
   const dispatch = useDispatch();
   const [latestManga, setLatestMange] = useState();
 
   useEffect(() => {
     const fetchManga = async () => {
       const { data } = await mangaApi(
-        "http://localhost:5001/manga-app/api/v1/latest"
+        "http://localhost:5001/manga-app/api/v1/carousel"
       );
       const { manga } = data;
-      const { carousel } = data;
+      dispatch(set_carousel_cover(manga));
+      console.log(manga);
       setLatestMange(manga);
-      dispatch(set_latest_manga(manga));
-      console.log(data);
-      if (carousel[0] !== null) {
-        dispatch(set_carousel_cover(carousel));
-      }
     };
     fetchManga();
+    return latestManga;
   }, [latestManga]);
 };

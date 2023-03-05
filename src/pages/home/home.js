@@ -4,11 +4,13 @@ import LatestUpdates from "../../components/latest_updates/latest_updates";
 import Navbar from "../../components/navbar/navbar";
 import PopularToday from "../../components/popular_today/popular_today";
 import { useLatestManga } from "../../Api/use_latest_manga";
+import { useGenres } from "../../Api/use_Genres";
 import { useSelector } from "react-redux";
 const Home = () => {
   const data = useSelector((state) => state);
   console.log(data);
   useLatestManga();
+  useGenres();
   return (
     <div>
       <Carousel />
