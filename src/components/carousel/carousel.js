@@ -2,17 +2,25 @@ import React from "react";
 import Navbar from "../navbar/navbar";
 import "./carousel.css";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router";
 
 const Carousel = () => {
+  const navigate = useNavigate();
   const { carousel } = useSelector((state) => state.latest);
+  const { action, romance, isekai, web_comic, martial_art } = useSelector(
+    (state) => state.genres
+  );
+  const { manga: allGenres } = useSelector((state) => state.latest);
 
   return (
     <div>
-      {" "}
       <div>
         <div id="controls-carousel" class="relative" data-carousel="static">
           {/* <!-- Carousel wrapper --> */}
-          <div class=" relative h-56 overflow-hidden rounded-lg md:h-96 carousel_hight">
+          <div
+            class=" relative  overflow-hidden rounded-lg  carousel_hight"
+            style={{ height: 500 }}
+          >
             {/* <!-- Item 1 --> */}
             <div
               class=" hidden duration-700 ease-in-out bg-gradient-to-r from-gradientCol"
@@ -20,7 +28,7 @@ const Carousel = () => {
             >
               <img
                 src={carousel[0].cover_art[0]}
-                class="absolute carousel_Image "
+                class="absolute carousel_Image"
                 style={{
                   width: "50%",
                   height: "90%",
@@ -30,9 +38,14 @@ const Carousel = () => {
                   borderRadius: "20px",
                 }}
                 alt="..."
+                onClick={() => {
+                  navigate(`/manga/${carousel[0].id}`, {
+                    state: { manga: carousel[0] },
+                  });
+                }}
               />{" "}
               <div className="carousel_genres_con w-96">
-                <h1 class="mb-4 text-xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                <h1 class="mb-4 text-clip text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl md:text-left lg:text-5xl dark:text-white sm:text-center ctitle overflow-hidden">
                   {carousel[0].title}
                 </h1>
                 <div>
@@ -61,7 +74,7 @@ const Carousel = () => {
             >
               <img
                 src={carousel[1].cover_art[0]}
-                class="absolute carousel_Image "
+                class="absolute carousel_Image"
                 style={{
                   width: "50%",
                   height: "90%",
@@ -71,9 +84,14 @@ const Carousel = () => {
                   borderRadius: "20px",
                 }}
                 alt="..."
+                onClick={() => {
+                  navigate(`/manga/${carousel[1].id}`, {
+                    state: { manga: carousel[1] },
+                  });
+                }}
               />{" "}
               <div className="carousel_genres_con w-96">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                <h1 class="mb-4 text-clip text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl md:text-left lg:text-5xl dark:text-white sm:text-center ctitle overflow-hidden">
                   {carousel[1].title}
                 </h1>
                 <div>
@@ -102,7 +120,7 @@ const Carousel = () => {
             >
               <img
                 src={carousel[2].cover_art[0]}
-                class="absolute carousel_Image "
+                class="absolute md- carousel_Image "
                 style={{
                   width: "50%",
                   height: "90%",
@@ -112,9 +130,14 @@ const Carousel = () => {
                   borderRadius: "20px",
                 }}
                 alt="..."
+                onClick={() => {
+                  navigate(`/manga/${carousel[2].id}`, {
+                    state: { manga: carousel[2] },
+                  });
+                }}
               />{" "}
               <div className="carousel_genres_con w-96">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                <h1 class="mb-4  text-clip text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl md:text-left lg:text-5xl dark:text-white sm:text-center ctitle overflow-hidden">
                   {carousel[2].title}
                 </h1>
                 <div>
@@ -153,9 +176,14 @@ const Carousel = () => {
                   borderRadius: "20px",
                 }}
                 alt="..."
+                onClick={() => {
+                  navigate(`/manga/${carousel[3].id}`, {
+                    state: { manga: carousel[3] },
+                  });
+                }}
               />{" "}
               <div className="carousel_genres_con w-96">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                <h1 class="mb-4 text-clip text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl md:text-left lg:text-5xl dark:text-white sm:text-center ctitle overflow-hidden">
                   {carousel[3].title}
                 </h1>
                 <div>
@@ -194,9 +222,14 @@ const Carousel = () => {
                   borderRadius: "20px",
                 }}
                 alt="..."
+                onClick={() => {
+                  navigate(`/manga/${carousel[4].id}`, {
+                    state: { manga: carousel[4] },
+                  });
+                }}
               />{" "}
               <div className="carousel_genres_con w-96">
-                <h1 class="mb-4 text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl lg:text-5xl dark:text-white">
+                <h1 class="mb-4 text-clip text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl md:text-left lg:text-5xl dark:text-white sm:text-center ctitle overflow-hidden">
                   {carousel[4].title}
                 </h1>
                 <div>
@@ -274,22 +307,65 @@ const Carousel = () => {
         <div>
           <h2 className="genre-text">Browse By Genre </h2>
         </div>
-        <button type="button" class=" button_genres ">
+        <button
+          type="button"
+          class=" button_genres "
+          onClick={(e) => {
+            let manga = action;
+
+            navigate(`/series/${"genre-action"}`, { state: manga });
+          }}
+        >
           Action
         </button>
-        <button type="button" class=" button_genres ">
-          Apocalypse
+        <button
+          type="button"
+          class=" button_genres "
+          onClick={(e) => {
+            let manga = romance;
+            navigate(`/series/${"genre-romance"}`, { state: manga });
+          }}
+        >
+          Romance
         </button>
-        <button type="button" class=" button_genres ">
+        <button
+          type="button"
+          class=" button_genres "
+          onClick={(e) => {
+            let manga = isekai;
+            navigate(`/series/${"genre-isekai"}`, { state: manga });
+          }}
+        >
           Comedy
         </button>
-        <button type="button" class=" button_genres ">
-          Adventure
+        <button
+          type="button"
+          class=" button_genres "
+          onClick={(e) => {
+            let manga = web_comic;
+            navigate(`/series/${"genre-web-comic"}`, { state: manga });
+          }}
+        >
+          Web-toon
         </button>
-        <button type="button" class=" button_genres ">
-          Isekai
+        <button
+          type="button"
+          class=" button_genres "
+          onClick={(e) => {
+            let manga = martial_art;
+            navigate(`/series/${"genre-martial-arts"}`, { state: manga });
+          }}
+        >
+          Martial arts
         </button>
-        <button type="button" class=" button_genres_more ">
+        <button
+          type="button"
+          class=" button_genres_more "
+          onClick={(e) => {
+            let manga = allGenres;
+            navigate(`/series/${"all-genres"}`, { state: manga });
+          }}
+        >
           All Genres >
         </button>
       </div>

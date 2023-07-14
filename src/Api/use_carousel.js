@@ -10,7 +10,7 @@ export const useCarousel = () => {
   useEffect(() => {
     const fetchManga = async () => {
       const { data } = await mangaApi(
-        "http://localhost:5001/manga-app/api/v1/carousel"
+        "https://hk-manga.herokuapp.com/manga-app/api/v1/carousel"
       );
       const { manga } = data;
       dispatch(set_carousel_cover(manga));
@@ -19,5 +19,5 @@ export const useCarousel = () => {
     };
     fetchManga();
     return latestManga;
-  }, [latestManga]);
+  }, []);
 };

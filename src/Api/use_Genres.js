@@ -19,21 +19,25 @@ export const useGenres = () => {
 
   useEffect(() => {
     const fetchManga = async () => {
-      const { data } = await mangaApi(
-        "http://localhost:5001/manga-app/api/v1/genres"
-      );
-      console.log(data);
-      if (data) {
-        dispatch(set_action(data.action));
-        dispatch(set_adventure(data.adventure));
-        dispatch(set_comedy(data.comedy));
-        dispatch(set_fantasy(data.fantasy));
-        dispatch(set_isekai(data.isekai));
-        dispatch(set_martial_arts(data.martial_art));
-        dispatch(set_romance(data.romance));
-        dispatch(set_web_comic(data.web_comic));
+      try {
+        const { data } = await mangaApi(
+          "https://hk-manga.herokuapp.com/manga-app/api/v1/genres"
+        );
+
+        if (data) {
+          dispatch(set_action(data.action));
+          dispatch(set_adventure(data.adventure));
+          dispatch(set_comedy(data.comedy));
+          dispatch(set_fantasy(data.fantasy));
+          dispatch(set_isekai(data.isekai));
+          dispatch(set_martial_arts(data.martial_art));
+          dispatch(set_romance(data.romance));
+          dispatch(set_web_comic(data.web_comic));
+        }
+      } catch (error) {
+        console.log(error);
       }
     };
     fetchManga();
-  }, [genres]);
+  }, []);
 };

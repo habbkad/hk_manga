@@ -1,9 +1,9 @@
 import axios from "axios";
 
-const mangaApi = async (api) => {
+const mangaApi = async (api, params) => {
   let manga;
   await axios
-    .get(`${api}`)
+    .get(`${api}`, { params })
     .then(function (response) {
       // handle success
 

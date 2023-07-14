@@ -21,6 +21,7 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 200px;
   justify-content: space-between;
 }
 
@@ -30,7 +31,7 @@
     display: flex;
     flex-direction: column;
     width: 90%;
-    height: 200px;
+    height: 0px;
     margin-left: 4%;
   }
   .popular_line {

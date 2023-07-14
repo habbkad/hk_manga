@@ -3,7 +3,7 @@ import SeriesGenres from "../../components/series_genre/series_genres/series_gen
 
 const Series = () => {
   return (
-    <div>
+    <div className="max-h-full">
       <SeriesGenres />
     </div>
   );

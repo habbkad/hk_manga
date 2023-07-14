@@ -10,7 +10,7 @@ export const useChapterImages = (id) => {
   useEffect(() => {
     const fetchManga = async () => {
       const data = await chaptersApi(
-        "http://localhost:5001/manga-app/api/v1/images",
+        "https://hk-manga.herokuapp.com/manga-app/api/v1/images",
         id
       );
       const { chap } = data;
@@ -18,5 +18,5 @@ export const useChapterImages = (id) => {
       dispatch(setChapterImages(chap));
     };
     fetchManga();
-  }, []);
+  }, [id]);
 };

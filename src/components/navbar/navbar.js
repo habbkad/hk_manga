@@ -5,9 +5,15 @@ import discord from "../../assets/icons8-discord-color/icons8-discord-48.svg";
 import pinterest from "../../assets/icons8-pinterest-color/icons8-pinterest-48.svg";
 import { useSelector, useDispatch } from "react-redux";
 import { currentWidth } from "../../Redux/reducers/responsive_width";
+import { useNavigate } from "react-router-dom";
+import searchApi from "../../Api/use_search_api";
 const Navbar = () => {
   const dispatch = useDispatch();
   const [width, setWidth] = useState();
+  const [search, setSearch] = useState("");
+  const { manga: allGenres } = useSelector((state) => state.latest);
+
+  const navigate = useNavigate();
   useEffect(() => {
     function handleResize() {
       setWidth(window.outerWidth);
@@ -22,7 +28,20 @@ const Navbar = () => {
       window.removeEventListener("resize", handleResize);
     };
   }, [width]);
-  console.log(width);
+
+  async function handleSearch(e) {
+    e.preventDefault();
+    // call action
+    let manga = await searchApi(
+      `https://hk-manga.herokuapp.com/manga-app/api/v1/search`,
+      search
+    );
+    if (manga) {
+      navigate(`/series/${search}`, { state: manga });
+    } else {
+      navigate("/");
+    }
+  }
 
   return (
     <nav class="nav_con border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
@@ -56,22 +75,27 @@ const Navbar = () => {
           {" "}
           <ul class="links_con flex flex-col p-4 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-7 md:mt-0 md:mr-10 md:text-sm md:font-medium md:border-0   ">
             <li class="ml-6 ">
-              <Link
-                to={"#"}
+              <button
                 class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
                 aria-current="page"
+                onClick={(e) => {
+                  navigate(`/`);
+                }}
               >
                 <h2 className="link">Home</h2>
-              </Link>
+              </button>
             </li>
             <li class="ml-6">
-              <Link
-                to={"#"}
+              <button
                 class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                onClick={(e) => {
+                  let manga = allGenres;
+                  navigate(`/series/${"all-genres"}`, { state: manga });
+                }}
               >
                 {" "}
                 <h2 className="link">Manga List</h2>
-              </Link>
+              </button>
             </li>
             <li class="ml-6">
               <Link
@@ -88,7 +112,7 @@ const Navbar = () => {
         <div className="nav_search_socials">
           {/* search bar input */}
           <div>
-            <form>
+            <form className="flex" onSubmit={handleSearch}>
               <label for="simple-search" class="sr-only">
                 Search
               </label>
@@ -108,14 +132,22 @@ const Navbar = () => {
                     ></path>
                   </svg>
                 </div>
+
                 <input
                   type="text"
                   id="simple-search"
                   class=" search bg-gray-900 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-red-600 focus:border-red-600 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-red-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-red-600 dark:focus:border-red-600"
                   placeholder="Search"
                   required
+                  value={search}
+                  onChange={(e) => {
+                    setSearch(e.target.value);
+                  }}
                 />
               </div>
+              <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-small rounded-lg text-sm px-2 ml-1  py-0 mr-2  dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                search
+              </button>
             </form>
           </div>
           <img src={discord} class=" socials ml-10" />

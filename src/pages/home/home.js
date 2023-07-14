@@ -6,13 +6,12 @@ import PopularToday from "../../components/popular_today/popular_today";
 import { useLatestManga } from "../../Api/use_latest_manga";
 import { useGenres } from "../../Api/use_Genres";
 import { useSelector } from "react-redux";
+import "./home.css";
 const Home = () => {
-  const data = useSelector((state) => state);
-  console.log(data);
   useLatestManga();
   useGenres();
   return (
-    <div>
+    <div className="home_con">
       <Carousel />
       <PopularToday />
       <LatestUpdates />

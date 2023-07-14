@@ -6,14 +6,21 @@ import "./popular_today.css";
 import { useSelector, useDispatch } from "react-redux";
 
 const PopularToday = () => {
-  const newWidth = useSelector((state) => state.pageWidth);
   const [width, setWidth] = useState();
-  const { action, romance, isekai, web_comic, martial_art } = useSelector(
-    (state) => state.genres
-  );
+  // const { action, romance, isekai, web_comic, martial_art } = useSelector(
+  //   (state) => state.genres
+  // );
+  const { manga: allGenres } = useSelector((state) => state.latest);
 
-  const arr = [action[0], romance[0], isekai[0], web_comic[0], martial_art[0]];
+  const arr = [
+    allGenres[Math.floor(Math.random() * allGenres.length - 1)],
+    allGenres[Math.floor(Math.random() * allGenres.length - 1)],
+    allGenres[Math.floor(Math.random() * allGenres.length - 1)],
+    allGenres[Math.floor(Math.random() * allGenres.length - 1)],
+    allGenres[Math.floor(Math.random() * allGenres.length - 1)],
+  ];
   console.log(arr);
+
   useEffect(() => {
     function handleResize() {
       setWidth(window.outerWidth);
@@ -35,18 +42,19 @@ const PopularToday = () => {
 
       {width <= 640 ? (
         <div>
-          <div className=""></div>
+          <div className="popular_cover_con"></div>
         </div>
       ) : (
         <div>
           <div className="popular_cover_con">
             {arr.map((item) => {
-              console.log(item);
-              return (
-                <div>
-                  <CoverRatings data={item} />
-                </div>
-              );
+              if (item !== undefined) {
+                return (
+                  <div>
+                    <CoverRatings data={item} />
+                  </div>
+                );
+              }
             })}
           </div>
         </div>

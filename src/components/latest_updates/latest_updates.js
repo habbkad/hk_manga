@@ -5,10 +5,9 @@ import { useSelector } from "react-redux";
 
 const LatestUpdates = () => {
   const [width, setWidth] = useState();
-  // const [manga, setManga] = useState([]);
+  const [dropNumber, setDropNum] = useState(23);
   const { manga } = useSelector((state) => state.latest);
 
-  const arr = [1, 4, 3, 2, 3, 2, 4, 5, 5, 5, 4, 3];
   useEffect(() => {
     function handleResize() {
       setWidth(window.outerWidth);
@@ -46,12 +45,14 @@ const LatestUpdates = () => {
         }
       >
         {manga ? (
-          manga.map((item) => {
-            return (
-              <div key={item.id}>
-                <CoverChaps manga={item} />
-              </div>
-            );
+          manga.map((item, index) => {
+            if (index <= dropNumber) {
+              return (
+                <div key={item.id}>
+                  <CoverChaps manga={item} />
+                </div>
+              );
+            }
           })
         ) : (
           <div>Loading...</div>
@@ -61,6 +62,9 @@ const LatestUpdates = () => {
         type="button"
         class="text-red-700 hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-full text-sm px-5 py-0 text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
         id="viewAllBtn"
+        onClick={(e) => {
+          setDropNum(dropNumber + 9);
+        }}
       >
         View all latest
       </button>

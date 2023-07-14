@@ -20,7 +20,7 @@ const CoverChaps = ({ manga }) => {
             src={manga.cover_art[2]}
             alt="image description"
             onClick={(e) => {
-              navigate("/manga/", { state: { manga } });
+              navigate(`/manga/${manga.id}`, { state: { manga } });
             }}
           />
         </div>
@@ -36,6 +36,11 @@ const CoverChaps = ({ manga }) => {
                   type="button"
                   class=" text-red-700  hover:text-white border border-red-700 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-full text-sm px-5  text-center mr-2 mb-2 dark:border-red-500 dark:text-red-500 dark:hover:text-white dark:hover:bg-red-600 dark:focus:ring-red-900"
                   id="chapBtn"
+                  onClick={(e) => {
+                    navigate(`/chapter/${manga.title}/${manga.id}`, {
+                      state: { item, title: manga.title },
+                    });
+                  }}
                 >
                   <p class="text-base text-red-700 dark:text-red-700">
                     Chapter:{item.chapter}

@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import ChapterImages from "../../components/chapter_images/chapter_images";
 import { useChapterImages } from "../../Api/use_chapter_images";
-import { useLocation } from "react-router";
+import { useLocation, useParams } from "react-router";
 import { useSelector } from "react-redux";
 const ReadChapter = () => {
   const location = useLocation();
-  const { item } = location.state;
-  useChapterImages(item.id);
+  const { item, title, chapter } = location.state;
+  const { id } = useParams();
+  const [Id, setId] = useState(id);
+
+  useChapterImages(Id);
+
   return (
-    <div>
-      <ChapterImages />
+    <div className="rchap bg-darkCol">
+      <ChapterImages title={title} id={id} chapter={chapter} />
     </div>
   );
 };

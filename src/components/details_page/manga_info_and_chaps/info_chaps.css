@@ -2,8 +2,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  margin-top: 50px;
 }
 .detail_info_con {
+  margin-top: 50px;
   width: 30%;
 }
 .detail_chap_con {
@@ -20,12 +22,15 @@
     flex-direction: column;
     position: relative;
     width: 100%;
+    margin-top: 20px;
   }
   .detail_info_con {
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.86);
+    background-color: rgba(47, 47, 47, 0.492);
+    margin-top: 0px;
   }
   .detail_chap_con {
+    margin-top: 20px;
     width: 100%;
   }
 
