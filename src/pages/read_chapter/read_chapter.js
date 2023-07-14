@@ -9,13 +9,16 @@ const ReadChapter = () => {
   const { id } = useParams();
   const [Id, setId] = useState(id);
 
-  useChapterImages(Id);
-
-  return (
-    <div className="rchap bg-darkCol">
-      <ChapterImages title={title} id={id} chapter={chapter} />
-    </div>
-  );
+  const { loading } = useChapterImages(Id);
+  if (loading) {
+    return <div className="loading"></div>;
+  } else {
+    return (
+      <div className="rchap bg-darkCol">
+        <ChapterImages title={title} id={id} chapter={chapter} />
+      </div>
+    );
+  }
 };
 
 export default ReadChapter;

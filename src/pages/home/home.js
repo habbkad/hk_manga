@@ -6,17 +6,23 @@ import PopularToday from "../../components/popular_today/popular_today";
 import { useLatestManga } from "../../Api/use_latest_manga";
 import { useGenres } from "../../Api/use_Genres";
 import { useSelector } from "react-redux";
+import loading from "../../assets/loading.gif";
 import "./home.css";
 const Home = () => {
-  useLatestManga();
+  const { loading } = useLatestManga();
+  console.log(loading);
   useGenres();
-  return (
-    <div className="home_con">
-      <Carousel />
-      <PopularToday />
-      <LatestUpdates />
-    </div>
-  );
+  if (loading) {
+    return <div className="loading"></div>;
+  } else {
+    return (
+      <div className="home_con">
+        <Carousel />
+        <PopularToday />
+        <LatestUpdates />
+      </div>
+    );
+  }
 };
 
 export default Home;
