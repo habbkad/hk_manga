@@ -1,0 +1,11 @@
+.image_ct_con {
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+}
+
+.image_ct {
+  height: 250px;
+  width: 180px;
+  border-radius: 10px;
+}

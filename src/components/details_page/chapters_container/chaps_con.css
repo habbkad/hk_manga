@@ -1,0 +1,11 @@
+.chap_red_line {
+  width: 1px;
+  border-width: 1px;
+  border-color: red;
+  width: 100%;
+}
+.chap_btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

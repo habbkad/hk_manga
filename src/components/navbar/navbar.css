@@ -1,9 +1,9 @@
 .navbar_container {
   display: flex;
   flex-direction: row;
-  background-color: rgba(12, 12, 12, 0.091);
+  background: linear-gradient(rgba(15, 2, 2, 0.669));
   align-items: center;
-  height: 70px;
+
   width: 100%;
   justify-content: space-between;
 }
@@ -36,4 +36,36 @@ ul {
 .socials {
   width: 40px;
   height: 40px;
+}
+
+@media only screen and (max-width: 640px) {
+  .navbar_container {
+    display: flex;
+    flex-direction: row;
+    margin-left: 0px !important;
+    background-color: rgba(244, 201, 201, 0);
+    align-items: center;
+    width: 90%;
+    justify-content: none;
+  }
+  .nav_con {
+    width: 90%;
+  }
+  .nav_search_socials {
+    visibility: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .search {
+    visibility: hidden;
+
+    width: 0px;
+    height: 0px;
+  }
+  .socials {
+    width: 0px;
+    height: 0px;
+  }
 }
