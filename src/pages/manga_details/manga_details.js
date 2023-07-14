@@ -5,7 +5,6 @@ import { useLocation, useParams } from "react-router";
 const MangaDetails = (props) => {
   const location = useLocation();
   const { manga } = location.state;
-  let { id } = useParams();
 
   return (
     <div>
