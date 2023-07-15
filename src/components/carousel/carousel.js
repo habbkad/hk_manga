@@ -45,7 +45,7 @@ const Carousel = () => {
                 }}
               />{" "}
               <div className="carousel_genres_con w-96">
-                <h1 class="mb-4 truncatetext-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl md:text-left lg:text-5xl dark:text-white sm:text-center">
+                <h1 class="mb-4 text-clip text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl md:text-left lg:text-5xl dark:text-white sm:text-center">
                   {carousel[0].title}
                 </h1>
                 <div>
