@@ -15,7 +15,7 @@ const Carousel = () => {
   return (
     <div>
       <div>
-        <div id="controls-carousel" class="relative" data-carousel="static">
+        <div id="controls-carousel" class="relative" data-carousel="slide">
           {/* <!-- Carousel wrapper --> */}
           <div
             class=" relative  overflow-hidden rounded-lg  carousel_hight"
@@ -69,7 +69,7 @@ const Carousel = () => {
             </div>
             {/* <!-- Item 2 --> */}
             <div
-              class=" hidden duration-700 ease-in-out bg-gradient-to-r from-gradientCol "
+              class="hidden  duration-700 ease-in-out bg-gradient-to-r from-gradientCol "
               data-carousel-item="active"
             >
               <img
