@@ -15,7 +15,7 @@ const Carousel = () => {
   return (
     <div>
       <div>
-        <div id="controls-carousel" class="relative" data-carousel="static">
+        <div id="controls-carousel" class="relative" data-carousel="slide">
           {/* <!-- Carousel wrapper --> */}
           <div
             class=" relative  overflow-hidden rounded-lg  carousel_hight"
@@ -45,7 +45,7 @@ const Carousel = () => {
                 }}
               />{" "}
               <div className="carousel_genres_con w-96">
-                <h1 class="mb-4 truncatetext-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl md:text-left lg:text-5xl dark:text-white sm:text-center">
+                <h1 class="mb-4 text-clip text-3xl font-extrabold leading-none tracking-tight text-gray-900 md:text-xl md:text-left lg:text-5xl dark:text-white sm:text-center">
                   {carousel[0].title}
                 </h1>
                 <div>
@@ -69,7 +69,7 @@ const Carousel = () => {
             </div>
             {/* <!-- Item 2 --> */}
             <div
-              class=" hidden duration-700 ease-in-out bg-gradient-to-r from-gradientCol "
+              class="hidden  duration-700 ease-in-out bg-gradient-to-r from-gradientCol "
               data-carousel-item="active"
             >
               <img

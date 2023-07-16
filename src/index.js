@@ -7,6 +7,7 @@ import "tw-elements";
 import "flowbite";
 import { Provider } from "react-redux";
 import store from "./Redux/store";
+import "flowbite";
 import "tw-elements";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
